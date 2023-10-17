@@ -17,12 +17,13 @@ def contact(request):
 
 #fruit list
 def product_list(request):
-   # products= Product.objects.all()
-    return render(request,'product-list.html')
+    if request.method == 'GET':
+        products= Product.objects.all()
+        return render(request,'product-list.html',{'products':products})
 
 #fruit details
 def product_detail(request, pk):
-   # product = Product.objects.get(id=pk)
-    return render(request, 'product-detail.html')
+    product = Product.objects.get(id=pk)
+    return render(request, 'product-detail.html',{'product':product})
 
 #vegetables list
