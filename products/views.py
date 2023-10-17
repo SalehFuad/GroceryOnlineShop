@@ -14,6 +14,7 @@ def about(request):
 def contact(request):
     return render(request, 'contact.html')
 
+
 #fruit list
 def list_fruits(request):
     fruits = Product.objects.filter(category='Fruits')
