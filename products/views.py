@@ -16,22 +16,13 @@ def contact(request):
 
 
 #fruit list
-def list_fruits(request):
-    fruits = Product.objects.filter(category='Fruits')
-    return render(request, '#', {'fruits': fruits})
+def product_list(request):
+   # products= Product.objects.all()
+    return render(request,'product-list.html')
 
 #fruit details
-def fruit_detail(request, pk):
-    fruit = Product.objects.get(id=pk,category='Fruits')
-    return render(request, '#', {'fruit': fruit})
+def product_detail(request, pk):
+   # product = Product.objects.get(id=pk)
+    return render(request, 'product-detail.html')
 
 #vegetables list
-def list_vegetables(request):
-    fruits = Product.objects.filter(category='vegetables')
-    return render(request, '#', {'fruits': fruits})
-
-#vegtables list
-def vegetable_detail(request, pk):
-    fruit = Product.objects.get(id=pk,category='vegetables')
-    return render(request, '#', {'fruit': fruit})
-
